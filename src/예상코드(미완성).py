@@ -1,5 +1,5 @@
 import cv2
-import numpy as np
+import numpy as np    #numpy를 사용
 
 # 얼굴 인식을 위한 Haar Cascade 로드
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -9,7 +9,7 @@ def load_image(image_path):
     return cv2.imread(image_path)
 
 # 얼굴 인식 함수
-def detect_face(image):     #얼굴 인식 함수를 정의
+def detect_face(image):     
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # 이미지를 회색조로 변환
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)  # 얼굴 인식
     return faces
